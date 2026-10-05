@@ -11,7 +11,7 @@
 
 <style>
   :root {
-    --bg: #17181b;
+    --bg: #09090b;
     --white: #ffffff;
     --white-soft: rgba(255, 255, 255, 0.9);
     --white-mid: rgba(255, 255, 255, 0.62);
@@ -323,10 +323,10 @@
 
   .about {
     margin: clamp(2.25rem, 7vw, 3rem) auto 0;
-    max-width: 30em;
     text-align: center;
-    font-size: 0.84rem;
-    line-height: 1.65;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
     color: var(--white-mid);
   }
 
@@ -449,7 +449,7 @@
 
   </nav>
 
-  <p class="about rise d7">I run a B2B cold-calling agency — the stack above is what we dial with every day. Based in Florida.</p>
+  <p class="about rise d7">18 / FL / Agency</p>
 
   <footer>Dylan Breheny &middot; 2026</footer>
 
@@ -457,9 +457,8 @@
 
 <script>
 (function () {
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var canvas = document.getElementById('stars');
-  if (!canvas || reduceMotion) { if (canvas) canvas.remove(); return; }
+  if (!canvas) return;
   var ctx = canvas.getContext('2d');
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
   var W, H;
@@ -532,7 +531,7 @@
     nextMeteor -= dt;
     if (nextMeteor <= 0) {
       spawnMeteor();
-      nextMeteor = 2500 + Math.random() * 4500;
+      nextMeteor = 1600 + Math.random() * 3200;
     }
 
     for (var m = meteors.length - 1; m >= 0; m--) {
